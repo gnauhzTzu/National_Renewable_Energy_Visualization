@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>renewable energy map in US</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700' rel='stylesheet' type='text/css'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+    <script src="https://d3js.org/queue.v1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.19/topojson.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h1>2014 U.S. Renewable Energy Generation Map</h1>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-lg-12">
+                <p>DESCRIPTION</p>
+                <p>This map visualized the distribution and the generation of the electricity plants with 11 types of fuel sources in 2014.
+                    <br> It's widely acknowledge that the finalized clean power plan are accelerating the growth of renewable energy industry. We can image a big potential in the future for America's wind, solar, water, etc.
+                    <br> Mouse over each state for a detailed description of the revenue from retail sales of electricity and the percent share of total U.S. electric generation in 2014. The annual average price of electricity are also shown.
+                    <br> To check the value of net generation, click each state in the next embedded map. The percentage of renewable energy(include wind, solar, biomass, geothermal, and water) and the percentage of coal and natural gas are also compared in bar chart.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div id="tooltip-container"></div>
+                <div id="canvas-svg"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <iframe id="eia_widget" style="width:100%;height:540px" src="//www.eia.gov/opendata/embed/iframe.php?geoset_id=ELEC.GEN.COW-99.A&map=us_merc_en&relation_id=ELEC.GEN.ALL-99.A|FUEL&regions=&relation_mode=pie&start=2014&end=2014"></iframe>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <p>In 2014, <strong>Coal</strong> and <strong>Natural gas</strong> are still the leading energy sources of U.S. Even though the coal industry in U.S. has been decline for several years. Coal shares <strong>23.3%</strong> of the total electricity production this year. Natural gas shares <strong>35.0%</strong> of the total electricity this year.<br> <strong>Coal</strong> is densely distributed in the East North Central, East South Central, South Atlantic, and the Middle Atlantic electronic regions. These areas share 25 percent of the national total generation. <br>
+                <strong>Natural Gas</strong> is widely distributed among 30 states from west to east. In California, Texas, New York, Nevada and Mississippi, the generation of <strong>National Gas</strong> shares a higher percentage than <strong>Coal</strong>.<br>
+                <strong>Wind</strong>,<strong>Solar</strong>, <strong>biomass</strong> and <strong>Water</strong> are the main clean power resource. Water energy gets <strong>6%</strong> of the total national generation, Solar is <strong>0.4%</strong> and Wind is <strong>4.4%</strong>.
+                <br>Water is mainly distributed in East of U.S., including California, Washington and Oregon. The distribution of Wind energy is highly correlated with the topography. Texas, California, Iowa are the top states for wind production. The distribution of Solar is relatively small compared with water and wind. It's mainly installed in California, Arizona, and New Jersey.<br>
+                For more statistic report, you may want to check the <a href="http://www.nrel.gov/docs/fy16osti/64720.pdf">2014 Renewable Energy Data Book</a>.</p> 
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 text-right">
+                <p id = "foot">Visualized by Xiaojuan Peng <br> Powered by <a href="https://d3js.org/">d3.js</a> Modified from <a href="https://bl.ocks.org/mbostock/9943478">d3.js map example</a> <br> Embedded Map &copy <a href="http://www.eia.gov/">EIA</a> under EIA's licenses <br> Data Source: U.S. Energy Information Administration <a href="http://www.eia.gov/electricity/data/eia923/">Form EIA-923</a> and <a href="http://www.eia.gov/electricity/data/eia860/index.html">Form EIA-860</a> </p>
+            </div>
+        </div>
+        <script src="js/map.js"></script>
+    </div>
+</body>
+
+</html>
